@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.capg.fms.model.User;
-import com.capg.fms.uitl.InvalidDetailsException;
+import com.capg.fms.util.InvalidDetailsException;
 
 public interface UserService {
 	

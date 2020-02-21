@@ -7,7 +7,7 @@ import java.util.Map;
 import com.capg.fms.dao.UserDao;
 import com.capg.fms.dao.UserDaoImpl;
 import com.capg.fms.model.User;
-import com.capg.fms.uitl.InvalidDetailsException;
+import com.capg.fms.util.InvalidDetailsException;
 
 public class UserServiceImpl implements UserService {
 	

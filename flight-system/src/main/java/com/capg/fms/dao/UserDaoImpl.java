@@ -12,11 +12,12 @@ public class UserDaoImpl implements UserDao {
 	Map<Long,User> userList=new HashMap<Long , User>();
 	
 	public void addSomeUsers() {
-		
+
 		User admin1=new User(12343456L,"Keerthi","dfgh456",9876543210L,"keerthi@gmail.com");
 		User admin2=new User(12343459L,"Kavya","34fsgj",9876543211L,"kavya@gmail.com");
 		userList.put(admin1.getUserId(),admin1);
 		userList.put(admin2.getUserId(),admin2);
+		
 	}
 
 	public boolean addUser(User user) {

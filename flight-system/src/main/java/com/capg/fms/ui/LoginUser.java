@@ -5,12 +5,13 @@ import java.util.Scanner;
 import com.capg.fms.model.User;
 import com.capg.fms.service.UserService;
 import com.capg.fms.service.UserServiceImpl;
-import com.capg.fms.uitl.InvalidDetailsException;
+import com.capg.fms.util.InvalidDetailsException;
 
 public class LoginUser {
 	static Scanner sc=new Scanner(System.in);
 	static User user=new User();
 	static UserService service=new UserServiceImpl();
+	
 	public static void main(String[] args) {
 		login();
 	}

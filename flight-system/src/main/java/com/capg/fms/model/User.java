@@ -1,5 +1,7 @@
 package com.capg.fms.model;
 
+import java.util.HashMap;
+
 public class User {
 
 	long userId;
@@ -8,11 +10,11 @@ public class User {
 	long userPhone;
 	String userEmail;
 	
-	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public User(long userId, String userName, String userPassword, long userPhone, String userEmail) {
 		super();
 		this.userId = userId;
@@ -21,11 +23,13 @@ public class User {
 		this.userPhone = userPhone;
 		this.userEmail = userEmail;
 	}
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", userPassword=" + userPassword + ", userPhone="
 				+ userPhone + ", userEmail=" + userEmail + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -37,6 +41,7 @@ public class User {
 		result = prime * result + (int) (userPhone ^ (userPhone >>> 32));
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -67,35 +72,45 @@ public class User {
 			return false;
 		return true;
 	}
+
 	public long getUserId() {
 		return userId;
 	}
+
 	public void setUserId(long userId) {
 		this.userId = userId;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	public String getUserPassword() {
 		return userPassword;
 	}
+
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
+
 	public long getUserPhone() {
 		return userPhone;
 	}
+
 	public void setUserPhone(long userPhone) {
 		this.userPhone = userPhone;
 	}
+
 	public String getUserEmail() {
 		return userEmail;
 	}
+
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
-	}	
-	
+	}
+		
 }
