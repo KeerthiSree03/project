@@ -3,9 +3,9 @@ package com.capg.fms.ui;
 import java.util.Scanner;
 
 import com.capg.fms.model.User;
-import com.capg.fms.service.InvalidDetailsException;
 import com.capg.fms.service.UserService;
 import com.capg.fms.service.UserServiceImpl;
+import com.capg.fms.uitl.InvalidDetailsException;
 
 public class LoginUser {
 	static Scanner sc=new Scanner(System.in);

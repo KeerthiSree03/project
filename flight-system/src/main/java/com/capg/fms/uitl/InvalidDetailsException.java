@@ -1,4 +1,4 @@
-package com.capg.fms.service;
+package com.capg.fms.uitl;
 
 public class InvalidDetailsException extends Exception{
 
