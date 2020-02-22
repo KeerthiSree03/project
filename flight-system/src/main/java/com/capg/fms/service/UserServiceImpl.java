@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
 
 	public List<User> viewUser() {
 		return d.viewUser();
-		
 	}
 
 	public Map<Long, User> getUser() {
