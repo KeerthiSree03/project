@@ -22,6 +22,7 @@ public class LoginUser {
 		System.out.println("Enter the userId:");
 		long id=sc.nextLong();
 		try {
+		try {
 			if(service.validateId(id)) {
 				user.setUserId(id);
 			}
@@ -56,12 +57,17 @@ public class LoginUser {
 		catch (InvalidDetailsException e1) {
 			System.out.println(e1.getMessage());
 		}
+		}
+		catch(InputMismatchException err2) {
+			System.out.println("Please enter the valid input type");
+		}
 		
 	}
 
 	public static void customerLogin() {
 		
 		service.initialUsersList();
+		try {
 		System.out.println("Enter the userId: ");
 		long customerId = sc.nextLong();
 		String customerPassword=null ;
@@ -82,12 +88,16 @@ public class LoginUser {
 			System.out.println("Invalid Id");
 			System.out.println("If new user then create a new account...");
 		}	
+		}catch(InputMismatchException err2) {
+			System.out.println("Please enter the valid input type");
+		}
 		
 			
 	}
 	public static void adminLogin() {
 		
 		service.initialUsersList();
+		try {
 		System.out.println("Enter the userId: ");
 		long adminId = sc.nextLong();
 		String adminPassword=null ;
@@ -105,6 +115,10 @@ public class LoginUser {
 		}
 		else {
 			System.out.println("Invalid id");
+		}
+	}
+		catch(InputMismatchException err2) {
+			System.out.println("Please enter the valid input type");
 		}
 	}
 	
