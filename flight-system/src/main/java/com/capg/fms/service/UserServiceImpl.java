@@ -37,7 +37,6 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	public boolean validatePhoneNo(long phoneNo) throws InvalidDetailsException {
-		int count=0;
 		String s=Long.toString(phoneNo);
 		if(s.length()==10 && s.charAt(0)!=0)
 			return true;
@@ -57,14 +56,17 @@ public class UserServiceImpl implements UserService {
 
 	public boolean validateId(long id) throws InvalidDetailsException {
 		int count=0;
+		long d;
 		while(id>0) {
-			long d=id % 10;
+			d=id % 10;
 			count++;
 			id=id/10;
 		}
-		if(count==12)
-			return true;
-		else
+		
+		if(count!=12)
 			throw new InvalidDetailsException("Invalid ID");	
+			
+		else
+			return true;
 	}
 }

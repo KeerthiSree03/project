@@ -9,12 +9,12 @@ import com.capg.fms.model.User;
 
 public class UserDaoImpl implements UserDao {
 
-	Map<Long,User> userList=new HashMap<Long , User>();
+	public static Map<Long,User> userList=new HashMap<Long , User>();
 	
 	public void addSomeUsers() {
 
-		User admin1=new User(12343456L,"Keerthi","dfgh456",9876543210L,"keerthi@gmail.com");
-		User admin2=new User(12343459L,"Kavya","34fsgj",9876543211L,"kavya@gmail.com");
+		User admin1=new User(123434567890L,"Keerthi","dfgh456",9876543210L,"keerthi@gmail.com");
+		User admin2=new User(123434591234L,"Kavya","34fsgj",9876543211L,"kavya@gmail.com");
 		userList.put(admin1.getUserId(),admin1);
 		userList.put(admin2.getUserId(),admin2);
 		
@@ -41,6 +41,7 @@ public class UserDaoImpl implements UserDao {
 		
 		return userList;
 	}
+	
 	public User viewUser(long userId) {
 		
 		if(userList.containsKey(userId)) {
@@ -49,26 +50,5 @@ public class UserDaoImpl implements UserDao {
 		return null;
 	}
 
-	public boolean updateUser(User user) {
-		
-		if(!userList.containsKey(user)) {
-			return false;
-		}
-		User userUpdate=userList.get(user);
-		userUpdate.setUserName(user.getUserName());
-		userUpdate.setUserPassword(user.getUserPassword());
-		userUpdate.setUserId(user.getUserId());
-		userUpdate.setUserPhone(user.getUserPhone());
-		userUpdate.setUserEmail(user.getUserEmail());
-		return true;
-	}
-
-	public boolean deleteUser(long userId) {
-		
-		if(userList.containsKey(userId)) {
-			userList.remove(userId, userList.containsKey(userId));
-			return true;
-		}
-		return false;
-	}
+	
 }
