@@ -51,11 +51,11 @@ public class AppTest {
 	
 	@Test
 	public void testUserById() {
-		assertEquals(admin1, service.viewUser(123434567890L));
+		assertEquals(admin1, service.viewUserById(123434567890L));
 	}
 	
 	@Test
-	public void testgetUser() {
-		assertEquals(userList, service.getUser());
+	public void testgetUserList() {
+		assertEquals(userList, service.getUserList());
 	}	
 }

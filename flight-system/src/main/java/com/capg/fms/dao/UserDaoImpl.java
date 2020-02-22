@@ -28,7 +28,7 @@ public class UserDaoImpl implements UserDao {
 		return true;
 	}
 
-	public List<User> viewUser() {
+	public List<User> viewUsers() {
 		
 		List<User> listOfUsers = new ArrayList<User>();
 		for(Long l:userList.keySet()) {
@@ -37,12 +37,12 @@ public class UserDaoImpl implements UserDao {
 		return listOfUsers;
 	}
 
-	public Map<Long, User> getUser() {
+	public Map<Long, User> getUserList() {
 		
 		return userList;
 	}
 	
-	public User viewUser(long userId) {
+	public User viewUserById(long userId) {
 		
 		if(userList.containsKey(userId)) {
 			return userList.get(userId);

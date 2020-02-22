@@ -11,28 +11,28 @@ import com.capg.fms.util.InvalidDetailsException;
 
 public class UserServiceImpl implements UserService {
 	
-	static UserDao d=new UserDaoImpl();
+	static UserDao dao=new UserDaoImpl();
 	
 	public boolean addUser(User user) {
-		return d.addUser(user); 
+		return dao.addUser(user); 
 	}
 
-	public List<User> viewUser() {
-		return d.viewUser();
+	public List<User> viewUsers() {
+		return dao.viewUsers();
 	}
 
-	public Map<Long, User> getUser() {
-		return d.getUser();
+	public Map<Long, User> getUserList() {
+		return dao.getUserList();
 		
 	}
 
-	public User viewUser(long userId) {
-		return d.viewUser(userId);
+	public User viewUserById(long userId) {
+		return dao.viewUserById(userId);
 		
 	}
 
 	public void initialUsersList() {
-		d.addSomeUsers();
+		dao.addSomeUsers();
 	}
 	
 	public boolean validatePhoneNo(long phoneNo) throws InvalidDetailsException {
@@ -68,4 +68,6 @@ public class UserServiceImpl implements UserService {
 		else
 			return true;
 	}
+
+	
 }

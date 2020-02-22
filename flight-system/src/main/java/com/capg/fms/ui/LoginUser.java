@@ -1,5 +1,6 @@
 package com.capg.fms.ui;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.capg.fms.model.User;
@@ -25,8 +26,8 @@ public class LoginUser {
 				user.setUserId(id);
 			}
 		System.out.println("Enter the password: ");
-		String pw=sc.next()+sc.nextLine();
-		user.setUserPassword(pw);
+		String password=sc.next()+sc.nextLine();
+		user.setUserPassword(password);
 		
 		System.out.println("Enter the Name: ");
 		String name=sc.next()+sc.nextLine();
@@ -62,18 +63,18 @@ public class LoginUser {
 		
 		service.initialUsersList();
 		System.out.println("Enter the userId: ");
-		long cId = sc.nextLong();
-		String cPw=null ;
-		if(service.getUser().containsKey(cId)) {
+		long customerId = sc.nextLong();
+		String customerPassword=null ;
+		if(service.getUserList().containsKey(customerId)) {
 			System.out.println("Enter the password: ");
-			cPw = sc.next()+sc.nextLine();
-			String p=service.viewUser(cId).getUserPassword();
-			if(p.equals(cPw)) {
-				System.out.println("Login Successful");
+			customerPassword = sc.next()+sc.nextLine();
+			String p=service.viewUserById(customerId).getUserPassword();
+			if(p.equals(customerPassword)) {
+				System.out.println("Login Successful!!!");
 			}
 			else {
 					System.out.println("Invalid password!!!.....try again");
-					System.out.println("If new user then create a new account...");
+					System.out.println("If new user then create a new account...or try to login again with correct credentials");
 					login();
 			}
 		}
@@ -88,13 +89,13 @@ public class LoginUser {
 		
 		service.initialUsersList();
 		System.out.println("Enter the userId: ");
-		long aId = sc.nextLong();
-		String aPw=null ;
-		if(service.getUser().containsKey(aId)) {
+		long adminId = sc.nextLong();
+		String adminPassword=null ;
+		if(service.getUserList().containsKey(adminId)) {
 			System.out.println("Enter the password: ");
-			aPw = sc.next()+sc.nextLine();
-			String p=service.viewUser(aId).getUserPassword();
-			if(p.equals(aPw)) {
+			adminPassword = sc.next()+sc.nextLine();
+			String p=service.viewUserById(adminId).getUserPassword();
+			if(p.equals(adminPassword)) {
 				System.out.println("Login Successful");
 			}
 			else {
@@ -113,7 +114,7 @@ public class LoginUser {
 		System.out.println("1 - Admin");
 		System.out.println("2 - Customer");
 		System.out.println("3 - New User");
-		
+		try {
 		
 		int choice=sc.nextInt();
 		
@@ -131,7 +132,13 @@ public class LoginUser {
 				break;
 				
 			default:
-				System.out.println("Invalid choice");
+				System.out.println("Invalid choice....Please try again");
+				login();
 		}
 	}
+		catch(InputMismatchException err){
+			System.out.println("Please choose valid option...");
+		}
+			
+		}
 }
